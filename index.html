@@ -1,12 +1,684 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ASVAB Coach – Support</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — KhassinX</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+  :root {
+    --navy:    #080F1E;
+    --navy2:   #0D1729;
+    --teal:    #2DD4BF;
+    --teal2:   #0D9488;
+    --purple:  #A78BFA;
+    --white:   #F0F4FF;
+    --muted:   rgba(240,244,255,0.45);
+    --faint:   rgba(240,244,255,0.10);
+    --border:  rgba(240,244,255,0.08);
+    --card:    rgba(240,244,255,0.04);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Background glow blobs */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(45,212,191,0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -200px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(167,139,250,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* Header */
+  header {
+    padding: 64px 0 56px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 56px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--teal), var(--purple));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--navy);
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  h1 em {
+    font-style: italic;
+    background: linear-gradient(90deg, var(--teal), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .meta {
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .meta-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  /* Summary card */
+  .summary-card {
+    background: linear-gradient(135deg, rgba(45,212,191,0.08), rgba(167,139,250,0.06));
+    border: 1px solid rgba(45,212,191,0.15);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 56px;
+  }
+
+  .summary-card p {
+    font-size: 15px;
+    color: rgba(240,244,255,0.80);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .summary-card strong {
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 52px;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  h2::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 20px;
+    background: linear-gradient(to bottom, var(--teal), var(--purple));
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  p {
+    font-size: 15px;
+    color: rgba(240,244,255,0.70);
+    margin-bottom: 14px;
+    line-height: 1.8;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 14px;
+  }
+
+  li {
+    font-size: 15px;
+    color: rgba(240,244,255,0.70);
+    padding: 6px 0 6px 22px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 16px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.6;
+  }
+
+  strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* Highlight boxes */
+  .highlight {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+
+  .highlight p { margin: 0; font-size: 14px; color: rgba(240,244,255,0.65); }
+
+  .highlight.purple { border-left-color: var(--purple); }
+
+  /* Contact section */
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(240,244,255,0.65);
+  }
+
+  .contact-icon {
+    width: 32px; height: 32px;
+    background: var(--faint);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+
+  a {
+    color: var(--teal);
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  a:hover { opacity: 0.75; }
+
+  /* Table of contents */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 52px;
+  }
+
+  .toc-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  .toc ol { counter-reset: toc; }
+  .toc li {
+    counter-increment: toc;
+    padding: 4px 0 4px 28px;
+  }
+  .toc li::before {
+    content: counter(toc) ".";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    font-size: 12px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .toc a { color: rgba(240,244,255,0.65); font-size: 14px; }
+  .toc a:hover { color: var(--teal); }
+
+  /* Footer */
+  footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(240,244,255,0.25);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(240,244,255,0.30);
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 40px 0 40px; }
+    .contact-card { padding: 20px; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
 </head>
 <body>
-  <h1>ASVAB Coach Support</h1>
-  <p>For support, contact: <a href="mailto:hello@khassinx.com">hello@khassinx.com</a></p>
-  <p>Developed by KhassinX</p>
-  <p>© 2026 KhassinX. All rights reserved.</p>
+<div class="container">
+
+  <header>
+    <a class="brand" href="#">
+      <div class="brand-mark">K</div>
+      <span class="brand-name">KhassinX</span>
+    </a>
+
+    <h1>Privacy <em>Policy</em></h1>
+
+    <div class="meta">
+      <div class="meta-item">
+        <div class="meta-dot"></div>
+        <span>Effective: April 3, 2026</span>
+      </div>
+      <div class="meta-item">
+        <div class="meta-dot"></div>
+        <span>Last updated: April 3, 2026</span>
+      </div>
+      <div class="meta-item">
+        <div class="meta-dot"></div>
+        <span>Applies to all KhassinX applications</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <p>
+      <strong>The short version:</strong> KhassinX apps collect the absolute minimum data needed to function. 
+      We do not sell your data, track you across apps, show you ads, or share your information with third parties for commercial purposes. 
+      Your data stays on your device by default. We believe privacy is a right, not a feature.
+    </p>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#scope">Scope of This Policy</a></li>
+      <li><a href="#information">Information We Collect</a></li>
+      <li><a href="#use">How We Use Information</a></li>
+      <li><a href="#sharing">Sharing of Information</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#california">California Privacy Rights (CCPA)</a></li>
+      <li><a href="#gdpr">European Users (GDPR)</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section id="scope">
+    <h2>Scope of This Policy</h2>
+    <p>
+      This Privacy Policy applies to all mobile applications, software products, and services developed and published by 
+      <strong>KhassinX</strong> (also referred to as "Abraham Alonso," "we," "us," or "our"), including but not limited to 
+      <strong>Khazen — Personal Finance</strong>, <strong>ASVAB X</strong>, and all future applications developed under the KhassinX brand, 
+      whether distributed through the Apple App Store, the Google Play Store, or any other platform.
+    </p>
+    <p>
+      By downloading, installing, or using any KhassinX application, you agree to the terms of this Privacy Policy. 
+      If you do not agree, please discontinue use of the application.
+    </p>
+    <div class="highlight">
+      <p>Each application may have supplemental disclosures specific to its features. Those disclosures are additive to this policy, not replacements for it.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="information">
+    <h2>Information We Collect</h2>
+    <p>We collect only the information strictly necessary to provide the features of each application. The categories of information we may collect include:</p>
+
+    <p><strong>Information you provide directly:</strong></p>
+    <ul>
+      <li>Account credentials if sign-in is required (e.g., Sign in with Apple — we receive only an anonymized identifier, not your email unless you choose to share it)</li>
+      <li>Financial data you manually enter (transactions, accounts, budgets) — stored locally on your device only</li>
+      <li>Public cryptocurrency wallet addresses you choose to add — stored locally on your device only</li>
+      <li>Preferences, settings, and configuration choices</li>
+    </ul>
+
+    <p><strong>Information collected automatically:</strong></p>
+    <ul>
+      <li>Crash reports and diagnostic data, if you have enabled this through your device's operating system settings</li>
+      <li>Aggregate, anonymized usage statistics through Apple's built-in analytics (if you have opted in on your Apple device) — we cannot identify individual users from this data</li>
+      <li>App version, device type, and operating system version for compatibility and debugging purposes</li>
+    </ul>
+
+    <p><strong>Information we do NOT collect:</strong></p>
+    <ul>
+      <li>Your precise location or GPS coordinates</li>
+      <li>Your contacts, photos, or camera roll (except when you explicitly use a receipt photo feature)</li>
+      <li>Your device's IDFA (Advertising Identifier) or any advertising identifier</li>
+      <li>Browsing history or data from other applications</li>
+      <li>Private keys, seed phrases, or any private cryptographic material</li>
+      <li>Bank credentials — we use Plaid's secure link where applicable, and we never see or store your banking username or password</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section id="use">
+    <h2>How We Use Information</h2>
+    <p>We use the information we collect solely for the following purposes:</p>
+    <ul>
+      <li>To provide, maintain, and improve the features and functionality of our applications</li>
+      <li>To synchronize your data securely across your own devices via iCloud (only when you enable this)</li>
+      <li>To process and display financial data you enter, entirely on your device</li>
+      <li>To fetch publicly available market data (e.g., cryptocurrency prices from CoinGecko) on your behalf</li>
+      <li>To diagnose crashes and technical issues in order to improve stability</li>
+      <li>To respond to your support requests</li>
+      <li>To comply with applicable law</li>
+    </ul>
+    <div class="highlight purple">
+      <p><strong>We do not use your information for advertising, profiling, or any form of behavioral tracking. We do not build user profiles or sell your data to any third party, ever.</strong></p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="sharing">
+    <h2>Sharing of Information</h2>
+    <p>
+      We do not sell, rent, trade, or otherwise disclose your personal information to third parties for their own commercial purposes. 
+      We may share your information only in the following limited circumstances:
+    </p>
+    <ul>
+      <li><strong>Service providers:</strong> We may use third-party services that process data on our behalf (e.g., Plaid for bank connectivity, Apple iCloud for cross-device sync). These providers are contractually bound to protect your data and may not use it for their own purposes.</li>
+      <li><strong>Legal obligations:</strong> We may disclose information if required by law, court order, or governmental authority, or to protect the rights, property, or safety of KhassinX, our users, or the public.</li>
+      <li><strong>Business transfers:</strong> If KhassinX is acquired, merged, or its assets are transferred, your information may be transferred as part of that transaction. You will be notified via a prominent notice in the application or by email prior to any such transfer.</li>
+      <li><strong>With your explicit consent:</strong> We may share information for any other purpose with your prior written consent.</li>
+    </ul>
+    <p>
+      In all other circumstances, your data remains on your device and is not transmitted to KhassinX servers unless a specific feature explicitly requires it (e.g., Plaid sync) and you have opted into that feature.
+    </p>
+  </section>
+
+  <!-- 5 -->
+  <section id="retention">
+    <h2>Data Retention</h2>
+    <p>
+      Because most of your data is stored locally on your device, you control its retention. Deleting the application removes all locally stored data. 
+      If iCloud sync is enabled, data in iCloud is governed by Apple's retention policies and can be deleted by you through your iCloud settings.
+    </p>
+    <p>
+      Any server-side data we may hold (such as Plaid access tokens where applicable) is retained only as long as necessary to provide the service. 
+      You may request deletion at any time by contacting us at <a href="mailto:hello@khassinx.com">hello@khassinx.com</a>.
+    </p>
+  </section>
+
+  <!-- 6 -->
+  <section id="children">
+    <h2>Children's Privacy</h2>
+    <p>
+      Our applications are not directed to children under the age of 13 (or under 16 in the European Economic Area). 
+      We do not knowingly collect personal information from children under these ages. 
+      If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at 
+      <a href="mailto:hello@khassinx.com">hello@khassinx.com</a> and we will take steps to delete such information.
+    </p>
+    <p>
+      Some applications may be appropriate for younger users for educational purposes (e.g., exam preparation apps). 
+      In such cases, we take additional care to ensure no personal data is collected from minors, and we encourage parents to supervise use.
+    </p>
+  </section>
+
+  <!-- 7 -->
+  <section id="third-party">
+    <h2>Third-Party Services</h2>
+    <p>Some KhassinX applications integrate with third-party services to provide functionality. The relevant services and their privacy policies are:</p>
+    <ul>
+      <li><strong>Plaid Inc.</strong> — Used for secure bank connectivity where applicable. Plaid's Privacy Policy: <a href="https://plaid.com/legal/#privacy-policy" target="_blank" rel="noopener">plaid.com/legal</a></li>
+      <li><strong>CoinGecko</strong> — Used to fetch publicly available cryptocurrency price data. No personal data is transmitted to CoinGecko. CoinGecko's Privacy Policy: <a href="https://www.coingecko.com/en/privacy" target="_blank" rel="noopener">coingecko.com/en/privacy</a></li>
+      <li><strong>Apple Inc. (iCloud, Sign in with Apple, App Store Analytics)</strong> — Apple's Privacy Policy: <a href="https://www.apple.com/legal/privacy" target="_blank" rel="noopener">apple.com/legal/privacy</a></li>
+      <li><strong>Public Blockchain RPCs</strong> — Requests to public blockchain nodes (Mempool.space, Etherscan, Solana RPC) to fetch wallet balances and transaction history are made using your public wallet address only. No personally identifying information is transmitted.</li>
+    </ul>
+    <div class="highlight">
+      <p>We are not responsible for the privacy practices of these third-party services. We encourage you to review their policies independently.</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section id="security">
+    <h2>Security</h2>
+    <p>
+      We take the security of your data seriously and implement industry-standard safeguards:
+    </p>
+    <ul>
+      <li>Sensitive tokens and credentials are stored exclusively in the iOS/macOS <strong>Keychain</strong>, never in databases or plain storage</li>
+      <li>Local data stores are encrypted using Apple's <strong>Data Protection</strong> framework (<code>fileProtection(.complete)</code>)</li>
+      <li>All network communications use <strong>HTTPS/TLS</strong> exclusively</li>
+      <li>Biometric authentication (Face ID / Touch ID) is supported for application access</li>
+      <li>We do not transmit your financial data to our servers</li>
+    </ul>
+    <p>
+      Despite our best efforts, no method of transmission over the internet or method of electronic storage is 100% secure. 
+      We cannot guarantee absolute security. In the event of a data breach that affects your personal information, 
+      we will notify you as required by applicable law.
+    </p>
+  </section>
+
+  <!-- 9 -->
+  <section id="rights">
+    <h2>Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate personal information</li>
+      <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+      <li><strong>Portability:</strong> Request your data in a portable format</li>
+      <li><strong>Objection:</strong> Object to our processing of your personal information</li>
+      <li><strong>Withdrawal of consent:</strong> Where processing is based on consent, withdraw that consent at any time</li>
+    </ul>
+    <p>
+      Because most data is stored locally on your device, you can exercise most of these rights directly by deleting the app 
+      or clearing app data through your device settings. For any data we hold server-side, 
+      contact us at <a href="mailto:hello@khassinx.com">hello@khassinx.com</a> and we will respond within 30 days.
+    </p>
+  </section>
+
+  <!-- 10 -->
+  <section id="california">
+    <h2>California Privacy Rights (CCPA / CPRA)</h2>
+    <p>
+      If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) as amended by the 
+      California Privacy Rights Act (CPRA), including:
+    </p>
+    <ul>
+      <li>The right to know what personal information we collect, use, disclose, and sell</li>
+      <li>The right to delete personal information we have collected from you</li>
+      <li>The right to opt-out of the sale or sharing of your personal information</li>
+      <li>The right to non-discrimination for exercising your privacy rights</li>
+      <li>The right to correct inaccurate personal information</li>
+      <li>The right to limit use of sensitive personal information</li>
+    </ul>
+    <div class="highlight">
+      <p><strong>We do not sell or share your personal information with third parties for cross-context behavioral advertising. We do not have actual knowledge of selling or sharing personal information of consumers under 16 years of age.</strong></p>
+    </div>
+    <p>
+      To exercise your California privacy rights, contact us at <a href="mailto:hello@khassinx.com">hello@khassinx.com</a> 
+      with the subject line "California Privacy Rights Request." We will respond within 45 days.
+    </p>
+  </section>
+
+  <!-- 11 -->
+  <section id="gdpr">
+    <h2>European Users (GDPR)</h2>
+    <p>
+      If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, 
+      you have rights under the General Data Protection Regulation (GDPR) or equivalent legislation.
+    </p>
+    <p><strong>Legal basis for processing:</strong> We process personal data on the following legal bases:</p>
+    <ul>
+      <li><strong>Contract performance:</strong> Processing necessary to provide the features you request</li>
+      <li><strong>Legitimate interests:</strong> Improving application stability and security</li>
+      <li><strong>Legal obligation:</strong> Compliance with applicable laws</li>
+      <li><strong>Consent:</strong> Where we explicitly ask for and receive your consent</li>
+    </ul>
+    <p>
+      You have the right to lodge a complaint with your local supervisory authority. 
+      For EU/EEA residents, you may contact your national data protection authority. 
+      For UK residents, you may contact the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.
+    </p>
+    <p>
+      As we are primarily a local-first application developer, most processing occurs on your device. 
+      Any cross-border data transfers that do occur (e.g., via Plaid or iCloud) are made to providers 
+      that maintain appropriate safeguards under GDPR, including Standard Contractual Clauses.
+    </p>
+  </section>
+
+  <!-- 12 -->
+  <section id="changes">
+    <h2>Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, 
+      or for other operational reasons. We will notify you of material changes by:
+    </p>
+    <ul>
+      <li>Posting a prominent notice within the application</li>
+      <li>Updating the "Last updated" date at the top of this page</li>
+      <li>Where required by law, obtaining your consent before implementing changes</li>
+    </ul>
+    <p>
+      Your continued use of any KhassinX application after changes become effective constitutes your acceptance of the revised policy. 
+      We encourage you to review this policy periodically.
+    </p>
+    <p>
+      Previous versions of this policy are available upon request by contacting us at 
+      <a href="mailto:hello@khassinx.com">hello@khassinx.com</a>.
+    </p>
+  </section>
+
+  <!-- 13 -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, 
+      please contact us. We are committed to resolving complaints and inquiries promptly.
+    </p>
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div style="font-weight:500; color: var(--white); margin-bottom:2px;">Support & Privacy Inquiries</div>
+          <a href="mailto:hello@khassinx.com">hello@khassinx.com</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">👤</div>
+        <div>
+          <div style="font-weight:500; color: var(--white); margin-bottom:2px;">Developer</div>
+          <span>Abraham Alonso (KhassinX)</span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">⏱️</div>
+        <div>
+          <div style="font-weight:500; color: var(--white); margin-bottom:2px;">Response Time</div>
+          <span>We aim to respond within 5 business days</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-copy">© 2026 KhassinX. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@khassinx.com">hello@khassinx.com</a>
+    </div>
+  </footer>
+
+</div>
 </body>
 </html>
